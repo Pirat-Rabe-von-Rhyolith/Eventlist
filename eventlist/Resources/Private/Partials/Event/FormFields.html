@@ -1,0 +1,22 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<label for="eventName">
+	<f:translate key="tx_eventlist_domain_model_event.event_name" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="eventName" /><br />
+<label for="eventLocation">
+	<f:translate key="tx_eventlist_domain_model_event.event_location" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textarea property="eventLocation" cols="40" rows="15" /><br />
+<label for="eventDate">
+	<f:translate key="tx_eventlist_domain_model_event.event_date" />
+</label><br />
+	<f:form.textfield property="eventDate" value="{event.eventDate->f:format.date()}" /><br />
+<label for="eventLink">
+	<f:translate key="tx_eventlist_domain_model_event.event_link" />
+</label><br />
+	<f:form.textfield property="eventLink" /><br />
+<label for="eventDescription">
+	<f:translate key="tx_eventlist_domain_model_event.event_description" />
+</label><br />
+	<f:form.textarea property="eventDescription" cols="40" rows="15" /><br />
+</html>
