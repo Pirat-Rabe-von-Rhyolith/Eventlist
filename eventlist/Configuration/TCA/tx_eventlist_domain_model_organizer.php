@@ -1,8 +1,8 @@
 <?php
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:eventlist/Resources/Private/Language/locallang_db.xlf:tx_eventlist_domain_model_event',
-        'label' => 'name',
+        'title' => 'LLL:EXT:eventlist/Resources/Private/Language/locallang_db.xlf:tx_eventlist_domain_model_organizer',
+        'label' => 'full_name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -16,14 +16,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'name,beginning,link,description,location,veranstalter,tags',
-        'iconfile' => 'EXT:eventlist/Resources/Public/Icons/tx_eventlist_domain_model_event.gif'
+        'searchFields' => 'full_name,email,link',
+        'iconfile' => 'EXT:eventlist/Resources/Public/Icons/tx_eventlist_domain_model_organizer.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, beginning, link, description, location, veranstalter, tags',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, full_name, email, link',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, beginning, link, description, location, veranstalter, tags, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, full_name, email, link, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -54,8 +54,8 @@ return [
                 'items' => [
                     ['', 0],
                 ],
-                'foreign_table' => 'tx_eventlist_domain_model_event',
-                'foreign_table_where' => 'AND tx_eventlist_domain_model_event.pid=###CURRENT_PID### AND tx_eventlist_domain_model_event.sys_language_uid IN (-1,0)',
+                'foreign_table' => 'tx_eventlist_domain_model_organizer',
+                'foreign_table_where' => 'AND tx_eventlist_domain_model_organizer.pid=###CURRENT_PID### AND tx_eventlist_domain_model_organizer.sys_language_uid IN (-1,0)',
             ],
         ],
         'l10n_diffsource' => [
@@ -115,78 +115,32 @@ return [
             ],
         ],
 
-        'name' => [
+        'full_name' => [
             'exclude' => false,
-            'label' => 'LLL:EXT:eventlist/Resources/Private/Language/locallang_db.xlf:tx_eventlist_domain_model_event.name',
+            'label' => 'LLL:EXT:eventlist/Resources/Private/Language/locallang_db.xlf:tx_eventlist_domain_model_organizer.full_name',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim,required'
             ],
         ],
-        'beginning' => [
+        'email' => [
             'exclude' => false,
-            'label' => 'LLL:EXT:eventlist/Resources/Private/Language/locallang_db.xlf:tx_eventlist_domain_model_event.beginning',
-            'config' => [
-                'dbType' => 'datetime',
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'size' => 12,
-                'eval' => 'datetime',
-                'default' => null,
-            ],
-        ],
-        'link' => [
-            'exclude' => false,
-            'label' => 'LLL:EXT:eventlist/Resources/Private/Language/locallang_db.xlf:tx_eventlist_domain_model_event.link',
+            'label' => 'LLL:EXT:eventlist/Resources/Private/Language/locallang_db.xlf:tx_eventlist_domain_model_organizer.email',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim'
             ],
         ],
-        'description' => [
+        'link' => [
             'exclude' => false,
-            'label' => 'LLL:EXT:eventlist/Resources/Private/Language/locallang_db.xlf:tx_eventlist_domain_model_event.description',
+            'label' => 'LLL:EXT:eventlist/Resources/Private/Language/locallang_db.xlf:tx_eventlist_domain_model_organizer.link',
             'config' => [
-                'type' => 'text',
-                'cols' => 40,
-                'rows' => 15,
+                'type' => 'input',
+                'size' => 30,
                 'eval' => 'trim'
-            ]
-        ],
-        'location' => [
-            'exclude' => false,
-            'label' => 'LLL:EXT:eventlist/Resources/Private/Language/locallang_db.xlf:tx_eventlist_domain_model_event.location',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'foreign_table' => 'tx_eventlist_domain_model_location',
-                'minitems' => 0,
-                'maxitems' => 1,
             ],
-        ],
-        'veranstalter' => [
-            'exclude' => false,
-            'label' => 'LLL:EXT:eventlist/Resources/Private/Language/locallang_db.xlf:tx_eventlist_domain_model_event.veranstalter',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'foreign_table' => 'tx_eventlist_domain_model_organizer',
-                'minitems' => 0,
-                'maxitems' => 1,
-            ],
-        ],
-        'tags' => [
-            'exclude' => false,
-            'label' => 'LLL:EXT:eventlist/Resources/Private/Language/locallang_db.xlf:tx_eventlist_domain_model_event.tags',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectCheckBox',
-                'foreign_table' => 'tx_eventlist_domain_model_tag',
-                'MM' => 'tx_eventlist_event_tag_mm',
-            ],
-            
         ],
     
     ],

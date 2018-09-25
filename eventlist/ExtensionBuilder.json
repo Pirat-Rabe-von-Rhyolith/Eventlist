@@ -3,8 +3,8 @@
         {
             "config": {
                 "position": [
-                    99,
-                    68
+                    17,
+                    65
                 ]
             },
             "name": "New Model Object",
@@ -12,9 +12,9 @@
                 "actionGroup": {
                     "_default0_list": true,
                     "_default1_show": true,
-                    "_default2_new_create": true,
-                    "_default3_edit_update": true,
-                    "_default4_delete": true,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
                     "customActions": []
                 },
                 "name": "Event",
@@ -41,20 +41,9 @@
                             "propertyIsExcludeField": false,
                             "propertyIsL10nModeExclude": false,
                             "propertyIsRequired": true,
-                            "propertyName": "eventName",
+                            "propertyName": "name",
                             "propertyType": "String",
                             "uid": "892848760202"
-                        },
-                        {
-                            "allowedFileTypes": "",
-                            "maxItems": "1",
-                            "propertyDescription": "Ort der Veranstaltung",
-                            "propertyIsExcludeField": false,
-                            "propertyIsL10nModeExclude": false,
-                            "propertyIsRequired": true,
-                            "propertyName": "eventLocation",
-                            "propertyType": "Text",
-                            "uid": "430636380694"
                         },
                         {
                             "allowedFileTypes": "",
@@ -63,7 +52,7 @@
                             "propertyIsExcludeField": false,
                             "propertyIsL10nModeExclude": false,
                             "propertyIsRequired": false,
-                            "propertyName": "eventDate",
+                            "propertyName": "beginning",
                             "propertyType": "NativeDateTime",
                             "uid": "1009323229128"
                         },
@@ -74,7 +63,7 @@
                             "propertyIsExcludeField": false,
                             "propertyIsL10nModeExclude": false,
                             "propertyIsRequired": false,
-                            "propertyName": "eventLink",
+                            "propertyName": "link",
                             "propertyType": "String",
                             "uid": "1244809585179"
                         },
@@ -85,7 +74,7 @@
                             "propertyIsExcludeField": false,
                             "propertyIsL10nModeExclude": false,
                             "propertyIsRequired": false,
-                            "propertyName": "eventDescription",
+                            "propertyName": "description",
                             "propertyType": "Text",
                             "uid": "1088177914800"
                         }
@@ -97,11 +86,22 @@
                             "foreignRelationClass": "",
                             "lazyLoading": true,
                             "propertyIsExcludeField": false,
+                            "relationDescription": "Ort ",
+                            "relationName": "location",
+                            "relationType": "manyToOne",
+                            "relationWire": "[wired]",
+                            "renderType": "selectSingle",
+                            "uid": "1457013566812"
+                        },
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": true,
+                            "propertyIsExcludeField": false,
                             "relationDescription": "Veranstalter",
                             "relationName": "veranstalter",
-                            "relationType": "zeroToOne",
+                            "relationType": "manyToOne",
                             "relationWire": "[wired]",
-                            "renderType": "selectSingleBox",
+                            "renderType": "selectSingle",
                             "uid": "730618654187"
                         },
                         {
@@ -122,8 +122,8 @@
         {
             "config": {
                 "position": [
-                    340,
-                    103
+                    392,
+                    183
                 ]
             },
             "name": "New Model Object",
@@ -136,7 +136,7 @@
                     "_default4_delete": false,
                     "customActions": []
                 },
-                "name": "Veranstalter",
+                "name": "Organizer",
                 "objectsettings": {
                     "addDeletedField": true,
                     "addHiddenField": true,
@@ -196,8 +196,8 @@
         {
             "config": {
                 "position": [
-                    101,
-                    308
+                    134,
+                    421
                 ]
             },
             "name": "New Model Object",
@@ -237,6 +237,69 @@
                             "propertyName": "tagValue",
                             "propertyType": "String",
                             "uid": "549110243731"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
+        },
+        {
+            "config": {
+                "position": [
+                    671,
+                    28
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": false,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": []
+                },
+                "name": "Location",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": false,
+                    "categorizable": false,
+                    "description": "Ort",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "skipTypeConfiguration": false,
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "1363667785952"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Adresse der Veranstaltung",
+                            "propertyIsExcludeField": false,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "address",
+                            "propertyType": "String",
+                            "uid": "792912253471"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Koordinaten der Adresse",
+                            "propertyIsExcludeField": false,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "coordinates",
+                            "propertyType": "String",
+                            "uid": "468370587425"
                         }
                     ]
                 },
@@ -291,7 +354,7 @@
         {
             "src": {
                 "moduleId": 0,
-                "terminal": "relationWire_0",
+                "terminal": "relationWire_1",
                 "uid": "730618654187"
             },
             "tgt": {
@@ -303,7 +366,7 @@
         {
             "src": {
                 "moduleId": 0,
-                "terminal": "relationWire_1",
+                "terminal": "relationWire_2",
                 "uid": "1056025169529"
             },
             "tgt": {
@@ -311,10 +374,22 @@
                 "terminal": "SOURCES",
                 "uid": "1235169828106"
             }
+        },
+        {
+            "src": {
+                "moduleId": 0,
+                "terminal": "relationWire_0",
+                "uid": "1457013566812"
+            },
+            "tgt": {
+                "moduleId": 3,
+                "terminal": "SOURCES",
+                "uid": "1363667785952"
+            }
         }
     ],
     "log": {
-        "last_modified": "2018-09-22 10:03",
+        "last_modified": "2018-09-24 03:27",
         "extension_builder_version": "8.10.2",
         "be_user": " (1)"
     }

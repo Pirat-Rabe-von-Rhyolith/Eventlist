@@ -3,8 +3,11 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2018-09-24T15:27:50Z" product-name="eventlist">
 		<header/>
 		<body>
-			<trans-unit id="tag_value.description">
-				<source>Tag-Wert</source>
+			<trans-unit id="address.description">
+				<source>Adresse der Veranstaltung</source>
+			</trans-unit>
+			<trans-unit id="coordinates.description">
+				<source>Koordinaten der Adresse</source>
 			</trans-unit>
 		</body>
 	</file>
