@@ -27,24 +27,24 @@ class EventTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     /**
      * @test
      */
-    public function getEventNameReturnsInitialValueForString()
+    public function getNameReturnsInitialValueForString()
     {
         self::assertSame(
             '',
-            $this->subject->getEventName()
+            $this->subject->getName()
         );
     }
 
     /**
      * @test
      */
-    public function setEventNameForStringSetsEventName()
+    public function setNameForStringSetsName()
     {
-        $this->subject->setEventName('Conceived at T3CON10');
+        $this->subject->setName('Conceived at T3CON10');
 
         self::assertAttributeEquals(
             'Conceived at T3CON10',
-            'eventName',
+            'name',
             $this->subject
         );
     }
@@ -52,50 +52,25 @@ class EventTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     /**
      * @test
      */
-    public function getEventLocationReturnsInitialValueForString()
-    {
-        self::assertSame(
-            '',
-            $this->subject->getEventLocation()
-        );
-    }
-
-    /**
-     * @test
-     */
-    public function setEventLocationForStringSetsEventLocation()
-    {
-        $this->subject->setEventLocation('Conceived at T3CON10');
-
-        self::assertAttributeEquals(
-            'Conceived at T3CON10',
-            'eventLocation',
-            $this->subject
-        );
-    }
-
-    /**
-     * @test
-     */
-    public function getEventDateReturnsInitialValueForDateTime()
+    public function getBeginningReturnsInitialValueForDateTime()
     {
         self::assertEquals(
             null,
-            $this->subject->getEventDate()
+            $this->subject->getBeginning()
         );
     }
 
     /**
      * @test
      */
-    public function setEventDateForDateTimeSetsEventDate()
+    public function setBeginningForDateTimeSetsBeginning()
     {
         $dateTimeFixture = new \DateTime();
-        $this->subject->setEventDate($dateTimeFixture);
+        $this->subject->setBeginning($dateTimeFixture);
 
         self::assertAttributeEquals(
             $dateTimeFixture,
-            'eventDate',
+            'beginning',
             $this->subject
         );
     }
@@ -103,24 +78,24 @@ class EventTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     /**
      * @test
      */
-    public function getEventLinkReturnsInitialValueForString()
+    public function getLinkReturnsInitialValueForString()
     {
         self::assertSame(
             '',
-            $this->subject->getEventLink()
+            $this->subject->getLink()
         );
     }
 
     /**
      * @test
      */
-    public function setEventLinkForStringSetsEventLink()
+    public function setLinkForStringSetsLink()
     {
-        $this->subject->setEventLink('Conceived at T3CON10');
+        $this->subject->setLink('Conceived at T3CON10');
 
         self::assertAttributeEquals(
             'Conceived at T3CON10',
-            'eventLink',
+            'link',
             $this->subject
         );
     }
@@ -128,24 +103,24 @@ class EventTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     /**
      * @test
      */
-    public function getEventDescriptionReturnsInitialValueForString()
+    public function getDescriptionReturnsInitialValueForString()
     {
         self::assertSame(
             '',
-            $this->subject->getEventDescription()
+            $this->subject->getDescription()
         );
     }
 
     /**
      * @test
      */
-    public function setEventDescriptionForStringSetsEventDescription()
+    public function setDescriptionForStringSetsDescription()
     {
-        $this->subject->setEventDescription('Conceived at T3CON10');
+        $this->subject->setDescription('Conceived at T3CON10');
 
         self::assertAttributeEquals(
             'Conceived at T3CON10',
-            'eventDescription',
+            'description',
             $this->subject
         );
     }
@@ -153,7 +128,33 @@ class EventTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     /**
      * @test
      */
-    public function getVeranstalterReturnsInitialValueForVeranstalter()
+    public function getLocationReturnsInitialValueForLocation()
+    {
+        self::assertEquals(
+            null,
+            $this->subject->getLocation()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setLocationForLocationSetsLocation()
+    {
+        $locationFixture = new \Tug\Eventlist\Domain\Model\Location();
+        $this->subject->setLocation($locationFixture);
+
+        self::assertAttributeEquals(
+            $locationFixture,
+            'location',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getVeranstalterReturnsInitialValueForOrganizer()
     {
         self::assertEquals(
             null,
@@ -164,9 +165,9 @@ class EventTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     /**
      * @test
      */
-    public function setVeranstalterForVeranstalterSetsVeranstalter()
+    public function setVeranstalterForOrganizerSetsVeranstalter()
     {
-        $veranstalterFixture = new \Tug\Eventlist\Domain\Model\Veranstalter();
+        $veranstalterFixture = new \Tug\Eventlist\Domain\Model\Organizer();
         $this->subject->setVeranstalter($veranstalterFixture);
 
         self::assertAttributeEquals(

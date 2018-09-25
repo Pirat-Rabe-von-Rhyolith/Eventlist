@@ -23,41 +23,41 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var string
      * @validate NotEmpty
      */
-    protected $eventName = '';
-
-    /**
-     * Ort der Veranstaltung
-     * 
-     * @var string
-     * @validate NotEmpty
-     */
-    protected $eventLocation = '';
+    protected $name = '';
 
     /**
      * Beginn der Veranstaltung
      * 
      * @var \DateTime
      */
-    protected $eventDate = null;
+    protected $beginning = null;
 
     /**
      * Verlinkung zu weiteren Veranstaltungsinfos
      * 
      * @var string
      */
-    protected $eventLink = '';
+    protected $link = '';
 
     /**
      * Kurze Beschreibung des Veranstaltungsinhalts/Programms
      * 
      * @var string
      */
-    protected $eventDescription = '';
+    protected $description = '';
+
+    /**
+     * Ort
+     * 
+     * @var \Tug\Eventlist\Domain\Model\Location
+     * @lazy
+     */
+    protected $location = null;
 
     /**
      * Veranstalter
      * 
-     * @var \Tug\Eventlist\Domain\Model\Veranstalter
+     * @var \Tug\Eventlist\Domain\Model\Organizer
      * @lazy
      */
     protected $veranstalter = null;
@@ -69,111 +69,6 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @lazy
      */
     protected $tags = null;
-
-    /**
-     * Returns the eventName
-     * 
-     * @return string $eventName
-     */
-    public function getEventName()
-    {
-        return $this->eventName;
-    }
-
-    /**
-     * Sets the eventName
-     * 
-     * @param string $eventName
-     * @return void
-     */
-    public function setEventName($eventName)
-    {
-        $this->eventName = $eventName;
-    }
-
-    /**
-     * Returns the eventLocation
-     * 
-     * @return string $eventLocation
-     */
-    public function getEventLocation()
-    {
-        return $this->eventLocation;
-    }
-
-    /**
-     * Sets the eventLocation
-     * 
-     * @param string $eventLocation
-     * @return void
-     */
-    public function setEventLocation($eventLocation)
-    {
-        $this->eventLocation = $eventLocation;
-    }
-
-    /**
-     * Returns the eventDate
-     * 
-     * @return \DateTime $eventDate
-     */
-    public function getEventDate()
-    {
-        return $this->eventDate;
-    }
-
-    /**
-     * Sets the eventDate
-     * 
-     * @param \DateTime $eventDate
-     * @return void
-     */
-    public function setEventDate(\DateTime $eventDate)
-    {
-        $this->eventDate = $eventDate;
-    }
-
-    /**
-     * Returns the eventLink
-     * 
-     * @return string $eventLink
-     */
-    public function getEventLink()
-    {
-        return $this->eventLink;
-    }
-
-    /**
-     * Sets the eventLink
-     * 
-     * @param string $eventLink
-     * @return void
-     */
-    public function setEventLink($eventLink)
-    {
-        $this->eventLink = $eventLink;
-    }
-
-    /**
-     * Returns the eventDescription
-     * 
-     * @return string $eventDescription
-     */
-    public function getEventDescription()
-    {
-        return $this->eventDescription;
-    }
-
-    /**
-     * Sets the eventDescription
-     * 
-     * @param string $eventDescription
-     * @return void
-     */
-    public function setEventDescription($eventDescription)
-    {
-        $this->eventDescription = $eventDescription;
-    }
 
     /**
      * __construct
@@ -195,27 +90,6 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected function initStorageObjects()
     {
         $this->tags = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-    }
-
-    /**
-     * Returns the veranstalter
-     * 
-     * @return \Tug\Eventlist\Domain\Model\Veranstalter $veranstalter
-     */
-    public function getVeranstalter()
-    {
-        return $this->veranstalter;
-    }
-
-    /**
-     * Sets the veranstalter
-     * 
-     * @param \Tug\Eventlist\Domain\Model\Veranstalter $veranstalter
-     * @return void
-     */
-    public function setVeranstalter(\Tug\Eventlist\Domain\Model\Veranstalter $veranstalter)
-    {
-        $this->veranstalter = $veranstalter;
     }
 
     /**
@@ -259,5 +133,131 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setTags(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $tags)
     {
         $this->tags = $tags;
+    }
+
+    /**
+     * Returns the location
+     * 
+     * @return \Tug\Eventlist\Domain\Model\Location $location
+     */
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
+    /**
+     * Sets the location
+     * 
+     * @param \Tug\Eventlist\Domain\Model\Location $location
+     * @return void
+     */
+    public function setLocation(\Tug\Eventlist\Domain\Model\Location $location)
+    {
+        $this->location = $location;
+    }
+
+    /**
+     * Returns the name
+     * 
+     * @return string name
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Sets the name
+     * 
+     * @param string $name
+     * @return void
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * Returns the beginning
+     * 
+     * @return \DateTime beginning
+     */
+    public function getBeginning()
+    {
+        return $this->beginning;
+    }
+
+    /**
+     * Sets the beginning
+     * 
+     * @param \DateTime $beginning
+     * @return void
+     */
+    public function setBeginning(\DateTime $beginning)
+    {
+        $this->beginning = $beginning;
+    }
+
+    /**
+     * Returns the link
+     * 
+     * @return string link
+     */
+    public function getLink()
+    {
+        return $this->link;
+    }
+
+    /**
+     * Sets the link
+     * 
+     * @param string $link
+     * @return void
+     */
+    public function setLink($link)
+    {
+        $this->link = $link;
+    }
+
+    /**
+     * Returns the description
+     * 
+     * @return string description
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Sets the description
+     * 
+     * @param string $description
+     * @return void
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * Returns the veranstalter
+     * 
+     * @return \Tug\Eventlist\Domain\Model\Organizer veranstalter
+     */
+    public function getVeranstalter()
+    {
+        return $this->veranstalter;
+    }
+
+    /**
+     * Sets the veranstalter
+     * 
+     * @param \Tug\Eventlist\Domain\Model\Organizer $veranstalter
+     * @return void
+     */
+    public function setVeranstalter(\Tug\Eventlist\Domain\Model\Organizer $veranstalter)
+    {
+        $this->veranstalter = $veranstalter;
     }
 }

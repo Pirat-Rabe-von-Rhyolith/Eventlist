@@ -16,11 +16,14 @@ call_user_func(
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_eventlist_domain_model_event', 'EXT:eventlist/Resources/Private/Language/locallang_csh_tx_eventlist_domain_model_event.xlf');
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_eventlist_domain_model_event');
 
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_eventlist_domain_model_veranstalter', 'EXT:eventlist/Resources/Private/Language/locallang_csh_tx_eventlist_domain_model_veranstalter.xlf');
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_eventlist_domain_model_veranstalter');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_eventlist_domain_model_organizer', 'EXT:eventlist/Resources/Private/Language/locallang_csh_tx_eventlist_domain_model_organizer.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_eventlist_domain_model_organizer');
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_eventlist_domain_model_tag', 'EXT:eventlist/Resources/Private/Language/locallang_csh_tx_eventlist_domain_model_tag.xlf');
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_eventlist_domain_model_tag');
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_eventlist_domain_model_location', 'EXT:eventlist/Resources/Private/Language/locallang_csh_tx_eventlist_domain_model_location.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_eventlist_domain_model_location');
 
     }
 );

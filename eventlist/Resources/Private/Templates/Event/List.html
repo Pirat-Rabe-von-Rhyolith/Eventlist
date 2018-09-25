@@ -13,23 +13,31 @@
 	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 	<f:section name="content">
-		<h1>Eventliste</h1>
+		<h1>Listing for Event</h1>
 
-		<dl class="dl-horizontal">
-			<dt>Eventname</dt>
-			<dd>{event.event_name}</dd>
-			<dt>Ort</dt>
-			<dd>{event.event_location}</dd>
-			<dt>Zeit</dt>
-			<dd>{event.event_date}</dd>
-			<dt>Link</dt>
-			<dd>{event.event_link}</dd>
-			<dt>Kurzbeschreibung</dt>
-			<dd>{event.event_description}</dd>
-		</dl>
+		<f:flashMessages />
 
+		<table  class="tx_eventlist" >
+			<tr>
+				<th><f:translate key="tx_eventlist_domain_model_event.name" /></th>
+				<th><f:translate key="tx_eventlist_domain_model_event.beginning" /></th>
+				<th><f:translate key="tx_eventlist_domain_model_event.link" /></th>
+				<th><f:translate key="tx_eventlist_domain_model_event.description" /></th>
+				<th> </th>
+				<th> </th>
+			</tr>
 
-
+			<f:for each="{events}" as="event">
+				<tr>
+					<td><f:link.action action="show" arguments="{event : event}"> {event.name}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{event : event}"> {event.beginning -> f:format.date()}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{event : event}"> {event.link}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{event : event}"> {event.description}</f:link.action></td>
+					<td><f:link.action action="edit" arguments="{event : event}">Edit</f:link.action></td>
+					<td><f:link.action action="delete" arguments="{event : event}">Delete</f:link.action></td>
+				</tr>
+			</f:for>
+		</table>
 
 		<f:link.action action="new">New Event</f:link.action>
 	</f:section>
