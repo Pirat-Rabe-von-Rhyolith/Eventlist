@@ -23,7 +23,16 @@ class EventController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * @var \Tug\Eventlist\Domain\Repository\EventRepository
      * @inject
      */
-    protected $eventRepository = null;
+    protected $eventRepository;
+
+    /**
+     * Persistence Manager
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager
+     * @inject
+     */
+
+    protected $persistenceManager;
 
     /**
      * action list
@@ -31,9 +40,13 @@ class EventController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * @return void
      */
     public function listAction()
-    {
-        $events = $this->eventRepository->findAll();
-        $this->view->assign('events', $events);
+    { if ($this->request->hasArgument('search')){
+        $search=$this->request->getArgument('search');
+    }
+
+        $this->view->assign('events', $this->eventRepository->findSearch($search));
+       /* $events = $this->eventRepository->findAll();
+        $this->view->assign('events', $events);*/
     }
 
     /**
@@ -45,5 +58,15 @@ class EventController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     public function showAction(\Tug\Eventlist\Domain\Model\Event $event)
     {
         $this->view->assign('event', $event);
+    }
+
+    /**
+     * action tag
+     * 
+     * @return void
+     */
+    public function tagAction()
+    {
+
     }
 }

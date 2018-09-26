@@ -11,7 +11,7 @@ CREATE TABLE tx_eventlist_domain_model_event (
 	link varchar(255) DEFAULT '' NOT NULL,
 	description text,
 	location int(11) unsigned DEFAULT '0',
-	veranstalter int(11) unsigned DEFAULT '0',
+	organizer int(11) unsigned DEFAULT '0',
 	tags int(11) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
@@ -94,7 +94,7 @@ CREATE TABLE tx_eventlist_domain_model_tag (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
-	tag_value varchar(255) DEFAULT '' NOT NULL,
+	value varchar(255) DEFAULT '' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -135,7 +135,8 @@ CREATE TABLE tx_eventlist_domain_model_location (
 	pid int(11) DEFAULT '0' NOT NULL,
 
 	address varchar(255) DEFAULT '' NOT NULL,
-	coordinates varchar(255) DEFAULT '' NOT NULL,
+	latitude varchar(255) DEFAULT '' NOT NULL,
+	longitude varchar(255) DEFAULT '' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,

@@ -15,7 +15,9 @@
                     "_default2_new_create": false,
                     "_default3_edit_update": false,
                     "_default4_delete": false,
-                    "customActions": []
+                    "customActions": [
+                        "tag"
+                    ]
                 },
                 "name": "Event",
                 "objectsettings": {
@@ -98,7 +100,7 @@
                             "lazyLoading": true,
                             "propertyIsExcludeField": false,
                             "relationDescription": "Veranstalter",
-                            "relationName": "veranstalter",
+                            "relationName": "organizer",
                             "relationType": "manyToOne",
                             "relationWire": "[wired]",
                             "renderType": "selectSingle",
@@ -234,7 +236,7 @@
                             "propertyIsExcludeField": false,
                             "propertyIsL10nModeExclude": false,
                             "propertyIsRequired": true,
-                            "propertyName": "tagValue",
+                            "propertyName": "value",
                             "propertyType": "String",
                             "uid": "549110243731"
                         }
@@ -255,8 +257,8 @@
             "name": "New Model Object",
             "value": {
                 "actionGroup": {
-                    "_default0_list": false,
-                    "_default1_show": false,
+                    "_default0_list": true,
+                    "_default1_show": true,
                     "_default2_new_create": false,
                     "_default3_edit_update": false,
                     "_default4_delete": false,
@@ -267,7 +269,7 @@
                     "addDeletedField": true,
                     "addHiddenField": true,
                     "addStarttimeEndtimeFields": true,
-                    "aggregateRoot": false,
+                    "aggregateRoot": true,
                     "categorizable": false,
                     "description": "Ort",
                     "mapToTable": "",
@@ -297,9 +299,20 @@
                             "propertyIsExcludeField": false,
                             "propertyIsL10nModeExclude": false,
                             "propertyIsRequired": false,
-                            "propertyName": "coordinates",
+                            "propertyName": "latitude",
                             "propertyType": "String",
                             "uid": "468370587425"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "longitude",
+                            "propertyType": "String",
+                            "uid": "646354004778"
                         }
                     ]
                 },
@@ -389,7 +402,7 @@
         }
     ],
     "log": {
-        "last_modified": "2018-09-24 03:27",
+        "last_modified": "2018-09-25 12:26",
         "extension_builder_version": "8.10.2",
         "be_user": " (1)"
     }

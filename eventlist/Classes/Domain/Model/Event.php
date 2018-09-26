@@ -60,7 +60,7 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var \Tug\Eventlist\Domain\Model\Organizer
      * @lazy
      */
-    protected $veranstalter = null;
+    protected $organizer = null;
 
     /**
      * Veranstaltungstags
@@ -241,23 +241,23 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the veranstalter
+     * Returns the organizer
      * 
-     * @return \Tug\Eventlist\Domain\Model\Organizer veranstalter
+     * @return \Tug\Eventlist\Domain\Model\Organizer organizer
      */
-    public function getVeranstalter()
+    public function getOrganizer()
     {
-        return $this->veranstalter;
+        return $this->organizer;
     }
 
     /**
-     * Sets the veranstalter
+     * Sets the organizer
      * 
-     * @param \Tug\Eventlist\Domain\Model\Organizer $veranstalter
+     * @param \Tug\Eventlist\Domain\Model\Organizer $organizer
      * @return void
      */
-    public function setVeranstalter(\Tug\Eventlist\Domain\Model\Organizer $veranstalter)
+    public function setOrganizer(\Tug\Eventlist\Domain\Model\Organizer $organizer)
     {
-        $this->veranstalter = $veranstalter;
+        $this->organizer = $organizer;
     }
 }

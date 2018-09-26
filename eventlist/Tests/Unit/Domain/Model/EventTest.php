@@ -154,25 +154,25 @@ class EventTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     /**
      * @test
      */
-    public function getVeranstalterReturnsInitialValueForOrganizer()
+    public function getOrganizerReturnsInitialValueForOrganizer()
     {
         self::assertEquals(
             null,
-            $this->subject->getVeranstalter()
+            $this->subject->getOrganizer()
         );
     }
 
     /**
      * @test
      */
-    public function setVeranstalterForOrganizerSetsVeranstalter()
+    public function setOrganizerForOrganizerSetsOrganizer()
     {
-        $veranstalterFixture = new \Tug\Eventlist\Domain\Model\Organizer();
-        $this->subject->setVeranstalter($veranstalterFixture);
+        $organizerFixture = new \Tug\Eventlist\Domain\Model\Organizer();
+        $this->subject->setOrganizer($organizerFixture);
 
         self::assertAttributeEquals(
-            $veranstalterFixture,
-            'veranstalter',
+            $organizerFixture,
+            'organizer',
             $this->subject
         );
     }

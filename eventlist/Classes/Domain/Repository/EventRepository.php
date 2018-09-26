@@ -17,4 +17,17 @@ namespace Tug\Eventlist\Domain\Repository;
  */
 class EventRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
+    /**
+     * @param string $search
+     * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
+
+    public function findSearch($search){
+        $query=$this->createQuery();
+        $query->matching(
+            $query->like('name','%'.$search.'%')
+        );
+        $query->setOrderings(array('name'=>\TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING));
+        return $query->execute();
     }
+}
