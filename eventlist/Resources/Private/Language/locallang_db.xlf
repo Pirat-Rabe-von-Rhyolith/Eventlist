@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2018-09-24T15:27:50Z" product-name="eventlist">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-09-25T12:26:14Z" product-name="eventlist">
 		<header/>
 		<body>
 			<trans-unit id="tx_eventlist_domain_model_event">
@@ -21,8 +21,8 @@
 			<trans-unit id="tx_eventlist_domain_model_event.location">
 				<source>Location</source>
 			</trans-unit>
-			<trans-unit id="tx_eventlist_domain_model_event.veranstalter">
-				<source>Veranstalter</source>
+			<trans-unit id="tx_eventlist_domain_model_event.organizer">
+				<source>Organizer</source>
 			</trans-unit>
 			<trans-unit id="tx_eventlist_domain_model_event.tags">
 				<source>Tags</source>
@@ -42,8 +42,8 @@
 			<trans-unit id="tx_eventlist_domain_model_tag">
 				<source>Tag</source>
 			</trans-unit>
-			<trans-unit id="tx_eventlist_domain_model_tag.tag_value">
-				<source>Tag Value</source>
+			<trans-unit id="tx_eventlist_domain_model_tag.value">
+				<source>Value</source>
 			</trans-unit>
 			<trans-unit id="tx_eventlist_domain_model_location">
 				<source>Location</source>
@@ -51,8 +51,11 @@
 			<trans-unit id="tx_eventlist_domain_model_location.address">
 				<source>Address</source>
 			</trans-unit>
-			<trans-unit id="tx_eventlist_domain_model_location.coordinates">
-				<source>Coordinates</source>
+			<trans-unit id="tx_eventlist_domain_model_location.latitude">
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_eventlist_domain_model_location.longitude">
+				<source>Longitude</source>
 			</trans-unit>
 			<trans-unit id="tx_eventlist_eventlisting.name">
 				<source>Event-Eventlisting</source>

@@ -27,24 +27,24 @@ class TagTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     /**
      * @test
      */
-    public function getTagValueReturnsInitialValueForString()
+    public function getValueReturnsInitialValueForString()
     {
         self::assertSame(
             '',
-            $this->subject->getTagValue()
+            $this->subject->getValue()
         );
     }
 
     /**
      * @test
      */
-    public function setTagValueForStringSetsTagValue()
+    public function setValueForStringSetsValue()
     {
-        $this->subject->setTagValue('Conceived at T3CON10');
+        $this->subject->setValue('Conceived at T3CON10');
 
         self::assertAttributeEquals(
             'Conceived at T3CON10',
-            'tagValue',
+            'value',
             $this->subject
         );
     }

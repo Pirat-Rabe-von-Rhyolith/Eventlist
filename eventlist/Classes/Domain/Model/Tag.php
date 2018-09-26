@@ -23,26 +23,26 @@ class Tag extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject
      * @var string
      * @validate NotEmpty
      */
-    protected $tagValue = '';
+    protected $value = '';
 
     /**
-     * Returns the tagValue
+     * Returns the value
      * 
-     * @return string $tagValue
+     * @return string value
      */
-    public function getTagValue()
+    public function getValue()
     {
-        return $this->tagValue;
+        return $this->value;
     }
 
     /**
-     * Sets the tagValue
+     * Sets the value
      * 
-     * @param string $tagValue
+     * @param string $value
      * @return void
      */
-    public function setTagValue($tagValue)
+    public function setValue($value)
     {
-        $this->tagValue = $tagValue;
+        $this->value = $value;
     }
 }

@@ -9,11 +9,11 @@ call_user_func(
             'Tug.Eventlist',
             'Eventlisting',
             [
-                'Event' => 'list'
+                'Event' => 'list,show'
             ],
             // non-cacheable actions
             [
-                'Event' => 'list'
+                'Event' => 'list,show'
             ]
         );
 

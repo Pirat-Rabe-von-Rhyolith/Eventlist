@@ -16,14 +16,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'address,coordinates',
+        'searchFields' => 'address,latitude,longitude',
         'iconfile' => 'EXT:eventlist/Resources/Public/Icons/tx_eventlist_domain_model_location.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, address, coordinates',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, address, latitude, longitude',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, address, coordinates, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, address, latitude, longitude, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -124,9 +124,18 @@ return [
                 'eval' => 'trim,required'
             ],
         ],
-        'coordinates' => [
+        'latitude' => [
             'exclude' => false,
-            'label' => 'LLL:EXT:eventlist/Resources/Private/Language/locallang_db.xlf:tx_eventlist_domain_model_location.coordinates',
+            'label' => 'LLL:EXT:eventlist/Resources/Private/Language/locallang_db.xlf:tx_eventlist_domain_model_location.latitude',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim'
+            ],
+        ],
+        'longitude' => [
+            'exclude' => false,
+            'label' => 'LLL:EXT:eventlist/Resources/Private/Language/locallang_db.xlf:tx_eventlist_domain_model_location.longitude',
             'config' => [
                 'type' => 'input',
                 'size' => 30,

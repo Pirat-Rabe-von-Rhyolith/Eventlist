@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2018-09-24T15:27:50Z" product-name="eventlist">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-09-25T12:26:14Z" product-name="eventlist">
 		<header/>
 		<body>
 			<trans-unit id="name.description">
@@ -18,7 +18,7 @@
 			<trans-unit id="location.description">
 				<source>Ort </source>
 			</trans-unit>
-			<trans-unit id="veranstalter.description">
+			<trans-unit id="organizer.description">
 				<source>Veranstalter</source>
 			</trans-unit>
 			<trans-unit id="tags.description">

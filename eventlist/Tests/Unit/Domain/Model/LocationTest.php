@@ -52,24 +52,49 @@ class LocationTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     /**
      * @test
      */
-    public function getCoordinatesReturnsInitialValueForString()
+    public function getLatitudeReturnsInitialValueForString()
     {
         self::assertSame(
             '',
-            $this->subject->getCoordinates()
+            $this->subject->getLatitude()
         );
     }
 
     /**
      * @test
      */
-    public function setCoordinatesForStringSetsCoordinates()
+    public function setLatitudeForStringSetsLatitude()
     {
-        $this->subject->setCoordinates('Conceived at T3CON10');
+        $this->subject->setLatitude('Conceived at T3CON10');
 
         self::assertAttributeEquals(
             'Conceived at T3CON10',
-            'coordinates',
+            'latitude',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getLongitudeReturnsInitialValueForString()
+    {
+        self::assertSame(
+            '',
+            $this->subject->getLongitude()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setLongitudeForStringSetsLongitude()
+    {
+        $this->subject->setLongitude('Conceived at T3CON10');
+
+        self::assertAttributeEquals(
+            'Conceived at T3CON10',
+            'longitude',
             $this->subject
         );
     }

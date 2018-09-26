@@ -30,7 +30,14 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * 
      * @var string
      */
-    protected $coordinates = '';
+    protected $latitude = '';
+
+    /**
+     * longitude
+     * 
+     * @var string
+     */
+    protected $longitude = '';
 
     /**
      * Returns the address
@@ -54,23 +61,44 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the coordinates
+     * Returns the latitude
      * 
-     * @return string $coordinates
+     * @return string latitude
      */
-    public function getCoordinates()
+    public function getLatitude()
     {
-        return $this->coordinates;
+        return $this->latitude;
     }
 
     /**
-     * Sets the coordinates
+     * Sets the latitude
      * 
-     * @param string $coordinates
+     * @param string $latitude
      * @return void
      */
-    public function setCoordinates($coordinates)
+    public function setLatitude($latitude)
     {
-        $this->coordinates = $coordinates;
+        $this->latitude = $latitude;
+    }
+
+    /**
+     * Returns the longitude
+     * 
+     * @return string $longitude
+     */
+    public function getLongitude()
+    {
+        return $this->longitude;
+    }
+
+    /**
+     * Sets the longitude
+     * 
+     * @param string $longitude
+     * @return void
+     */
+    public function setLongitude($longitude)
+    {
+        $this->longitude = $longitude;
     }
 }
