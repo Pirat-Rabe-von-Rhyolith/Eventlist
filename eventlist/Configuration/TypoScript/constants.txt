@@ -13,3 +13,4 @@ plugin.tx_eventlist_eventlisting {
         storagePid = 16
     }
 }
+
