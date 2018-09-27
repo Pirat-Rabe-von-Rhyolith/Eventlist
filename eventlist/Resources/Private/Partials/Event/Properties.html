@@ -2,10 +2,14 @@
 <dl class="dl-horizontal">
 	<dt>Eventname</dt>
 	<dd>{event.name}</dd>
+	<dt>Ort</dt>
+	<dd>{event.location.address}</dd>
+	<dt>Veranstalter</dt>
+	<dd>{event.organizer.fullname}<br/>Email:{event.organizer.email}</dd>
 	<dt>Beginn</dt>
-	<dd>{event.beginning}</dd>
+	<dd><f:format.date format="D d.m.Y">{event.beginning}</f:format.date><br/>Uhrzeit:<f:format.date format="G:i">{event.beginning}</f:format.date></dd>
 	<dt>Link</dt>
-	<dd>{event.link}</dd>
+	<dd><f:link.external uri="{event.link}" target="_blank">{event.link}</f:link.external></dd>
 	<dt>Kurzbeschreibung</dt>
 	<dd>{event.description}</dd>
 </dl>

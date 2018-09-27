@@ -10,6 +10,7 @@ plugin.tx_eventlist_eventlisting {
     }
     persistence {
         storagePid = {$plugin.tx_eventlist_eventlisting.persistence.storagePid}
+        storagePid = 17,18,19,20
         #recursive = 1
     }
     features {
@@ -69,3 +70,4 @@ page{
         bootstrap=EXT:eventlist/Resources/Public/Bootstrap/js/bootstrap.min.js
     }
 }
+
