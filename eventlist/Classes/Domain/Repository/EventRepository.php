@@ -25,9 +25,16 @@ class EventRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     public function findSearch($search){
         $query=$this->createQuery();
         $query->matching(
-            $query->like('name','%'.$search.'%')
+            $query->logicalOr(
+                $query->like('name','%'.$search.'%'),
+                $query->like('location.address','%'.$search.'%'),
+                $query->like('description','%'.$search.'%'),
+                $query->like('organizer.fullName','%'.$search.'%'),
+                $query->like('tags.value','%'.$search.'%')
+            )
         );
         $query->setOrderings(array('name'=>\TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING));
+        $query->setOrderings(array('description'=>\TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING));
         return $query->execute();
     }
 }
