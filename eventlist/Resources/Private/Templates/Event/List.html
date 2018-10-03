@@ -1,3 +1,5 @@
+{namespace sv=Tug\Eventlist\ViewHelpers}
+
 <f:layout name="Default" />
 
 	<f:section name="content">
@@ -13,6 +15,7 @@
 		</f:form>
 
 		<ul class="list-group">
+
 			<f:for each="{events}" as="event">
 				<li class="list-group-item">{event.name}
 					<f:for each="{event.tags}" as="tag">
@@ -21,5 +24,6 @@
 				<f:link.action action="show" arguments="{event:event}" class="btn btn-primary btn-xs pull-right"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> ansehen</f:link.action>
 				</li>
 			</f:for>
+
 		</ul>
 	</f:section>
