@@ -1,0 +1,28 @@
+{
+    "name": "tug/eventlist",
+    "type": "typo3-cms-extension",
+    "description": "Die Extension der TUG Cologne zur Anzeige von Veranstaltungen",
+    "authors": [
+        {
+            "name": "Stefan Reiss",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^8.7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tug\\Eventlist\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tug\\Eventlist\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "eventlist": "self.version",
+        "typo3-ter/eventlist": "self.version"
+    }
+}

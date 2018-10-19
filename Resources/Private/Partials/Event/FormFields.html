@@ -1,0 +1,21 @@
+
+<label for="name">
+	<f:translate key="tx_eventlist_domain_model_event.name" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="name" /><br />
+<label for="location">
+	<f:translate key="tx_eventlist_domain_model_event.location" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textarea property="location" cols="40" rows="15" /><br />
+<label for="beginning">
+	<f:translate key="tx_eventlist_domain_model_event.beginning" />
+</label><br />
+	<f:form.textfield property="beginning" value="{event.beginning->f:format.date()}" /><br />
+<label for="link">
+	<f:translate key="tx_eventlist_domain_model_event.link" />
+</label><br />
+	<f:form.textfield property="link" /><br />
+<label for="description">
+	<f:translate key="tx_eventlist_domain_model_event.description" />
+</label><br />
+	<f:form.textarea property="description" cols="40" rows="15" /><br />

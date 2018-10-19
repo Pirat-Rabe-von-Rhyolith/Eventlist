@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-09-25T12:26:14Z" product-name="eventlist">
+		<header/>
+		<body>
+			<trans-unit id="name.description">
+				<source>Name der Veranstaltung</source>
+			</trans-unit>
+			<trans-unit id="beginning.description">
+				<source>Beginn der Veranstaltung</source>
+			</trans-unit>
+			<trans-unit id="link.description">
+				<source>Verlinkung zu weiteren Veranstaltungsinfos</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>Kurze Beschreibung des Veranstaltungsinhalts/Programms</source>
+			</trans-unit>
+			<trans-unit id="location.description">
+				<source>Ort </source>
+			</trans-unit>
+			<trans-unit id="organizer.description">
+				<source>Veranstalter</source>
+			</trans-unit>
+			<trans-unit id="tags.description">
+				<source>Veranstaltungstags</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

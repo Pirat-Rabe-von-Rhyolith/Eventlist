@@ -1,0 +1,9 @@
+
+	<f:layout name="Default" />
+
+	<f:section name="content">
+		<h1>Details: {event.name}</h1>
+
+		<f:render partial="Event/Properties" arguments="{event:event}" />
+		<f:link.action action="list"class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>Zurück</f:link.action><br />
+	</f:section>
