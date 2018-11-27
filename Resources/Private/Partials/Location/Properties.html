@@ -4,7 +4,9 @@
 	<dt>Adresse</dt>
 	<dd>{location.address}</dd>
 
-	Events ansehen:
-	<f:for each="{events}" as="event"><f:link.action action="show" controller="Event" arguments="{event:event}">{event.name}</f:link.action></f:for>
+	<dt>Events ansehen:</dt>
+	<dd>
+	<f:for each="{events}" as="event"><f:link.action action="show" controller="Event" arguments="{event:event}">{event.name}</f:link.action><br/></f:for>
+	</dd>
 </dl>
 
