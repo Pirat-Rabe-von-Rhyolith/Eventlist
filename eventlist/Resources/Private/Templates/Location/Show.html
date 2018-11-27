@@ -3,10 +3,8 @@
 
 
 	<f:section name="content">
-		<h1>Single View for Location</h1>
+		<h1>Liste der Veranstaltungen</h1>
 
-		<f:flashMessages />
-		<f:render partial="Location/Properties" arguments="{location:location}" />
-		<f:link.action action="list">Back to list</f:link.action><br />
-		<f:link.action action="new">New Location</f:link.action>
+		<f:render partial="Location/Properties" arguments="{location:location,events:events}"/>
+		<f:link.action action="list" controller="Event">Back to list</f:link.action><br />
 	</f:section>

@@ -17,13 +17,19 @@
 		<ul class="list-group">
 
 			<f:for each="{events}" as="event">
-				<li class="list-group-item">{event.name}
+				<li class="list-group-item">
+					<f:link.action action="show" arguments="{event:event}">{event.name}</f:link.action>
 					<f:for each="{event.tags}" as="tag">
 						<span class="label label-default">{tag.value}</span>
 					</f:for>
-				<f:link.action action="show" arguments="{event:event}" class="btn btn-primary btn-xs pull-right"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> ansehen</f:link.action>
+					<p class="text-left">
+					Wo und wann:
+						<f:link.action action="show" controller="Location" arguments="{location:event.location}">{event.location.address}</f:link.action> am <f:format.date format="D d.m.Y">{event.beginning}</f:format.date>.
+					</p>
 				</li>
 			</f:for>
 
 		</ul>
+		<div id="mapid"></div>
+
 	</f:section>

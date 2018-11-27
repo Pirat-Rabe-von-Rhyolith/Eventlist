@@ -63,11 +63,14 @@ page{
     includeCSS{
         bootstrap=EXT:eventlist/Resources/Public/Bootstrap/css/bootstrap.min.css
         eventlist=EXT:eventlist/Resources/Public/Css/eventlist.css
+        leaflet=EXT:eventlist/Resources/Public/Leaflet/leaflet.css
     }
-    includeJSlibs{
+    includeJSLibs{
         jquery=//code.jquery.com/jquery.js
         jquery.external=1
         bootstrap=EXT:eventlist/Resources/Public/Bootstrap/js/bootstrap.min.js
+        leaflet=EXT:eventlist/Resources/Public/Leaflet/leaflet.js
+        mapjs=EXT:eventlist/Resources/Public/Js/map.js
     }
 }
 

@@ -23,7 +23,15 @@ class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      * @var \Tug\Eventlist\Domain\Repository\LocationRepository
      * @inject
      */
-    protected $locationRepository = null;
+    protected $locationRepository;
+
+    /**
+     * eventRepository
+     *
+     * @var \Tug\Eventlist\Domain\Repository\EventRepository
+     * @inject
+     */
+    protected $eventRepository;
 
     /**
      * action list
@@ -38,12 +46,14 @@ class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
     /**
      * action show
-     * 
+     *
      * @param \Tug\Eventlist\Domain\Model\Location $location
-     * @return void
      */
     public function showAction(\Tug\Eventlist\Domain\Model\Location $location)
     {
+
+        $events = $this->eventRepository->findByLocation($location);
+        $this->view->assign('events', $events);
         $this->view->assign('location', $location);
     }
 }
